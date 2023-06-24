@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: rinku4
+  namespace: kube-system
+  labels:
+    k8s-app: rinku4
+spec:
+  selector:
+    matchLabels:
+      name: rinku4
+  template:
+    metadata:
+      labels:
+        name: rinku4
+    spec:
+      containers:
+      - name: rinku4
+        image: nginx
