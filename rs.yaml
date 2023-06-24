@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rinku2
+  labels:
+    app: rinku0
+    tier: rinku2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: rinku2
+  template:
+    metadata:
+      labels:
+        tier: rinku2
+    spec:
+      containers:
+      - name: rinku2
+        image: nginx
