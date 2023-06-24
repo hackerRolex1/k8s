@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rinku3
+  labels:
+    app: rinku3
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rinku3
+  template:
+    metadata:
+      labels:
+        app: rinku3
+    spec:
+      containers:
+      - name: rinku3
+        image: nginx
+        ports:
+        - containerPort: 80
