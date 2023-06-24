@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rinku-pod
+spec:
+  containers:
+  - name: rinku
+    image: nginx
+    ports:
+    - containerPort: 80
+
