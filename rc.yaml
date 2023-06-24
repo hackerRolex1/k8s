@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rinku-rc
+spec:
+  replicas: 2
+  selector:
+    app: rinku
+  template:
+    metadata:
+      name: rinku1
+      labels:
+        app: rinku1
+    spec:
+      containers:
+      - name: rinku1
+        image: nginx
+        ports:
+        - containerPort: 80
